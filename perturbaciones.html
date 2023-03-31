@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detector de Perturbaciones en Tiempo Real</title>
+    <link rel="stylesheet" href="css/estilos.css">
+    <script src="js/jquery-3.6.4.min.js"></script>
+    <script src="js/funciones.js"></script> 
+</head>
+<body id="contenedor">
+    <header id="encabezado">
+        <section id="ImagenesTop">
+            <picture id="Sep">
+                <img src="imagenes/seplogo.png" alt="IT Morelia" id="Sep">      
+            </picture>
+            <picture id="Cona">
+                <img src="imagenes/conacyt.png" alt="IT Morelia" id="Cona">      
+            </picture>
+            <picture id="Tecnm">
+                <img src="imagenes/TecNM_logo.png" alt="TecNM" id="Tecnm">
+            </picture>
+            <picture id="Itmorelia">
+                <img src="imagenes/Itmorelia.png" alt="IT Morelia" id="Itmorelia">      
+            </picture>
+            <picture id="Pcie">
+                <img src="imagenes/pcie.png" alt="IT Morelia" id="Pcie">      
+            </picture>
+            
+        </section>
+        <fieldset>
+            <h1 class="centrar">Calidad de la energía</h1>
+        </fieldset>   
+    </header>
+    <aside id="menu">
+        <h2 class="centrar">Menu</h2>
+        <ul>        
+            <li><a href="index.html" class="fuente">Inicio</a></li>
+            <br>
+            <li> <a href="perturbaciones.html" class="fuente">Perturbaciones</a></li>
+            <br>
+            <li><a href="detector.html" class="fuente">Detector Propuesto</a></li>
+            <br>
+            <li><a href="acerca.html" class="fuente">Acerca de</a></li>
+            <br>
+            <li><a href="formulario.html" class="centrar fuente">Iniciar Sesión</a></li>
+        </ul>
+    </aside>
+    <main id="contenido">
+        <article id="definicion">
+            Una perturbación son los eventos que afectan o deterioran las características de la señal senoidal
+            que debe de tener el suministro eléctrico, las más comunes son: impulsos en el voltaje de línea, ruido, 
+            transitorios, cambio en la magnitud de voltaje en estado estable, o alguna combinación de éstos, y la mayoría 
+            son de duración corta. La IEEE divide las perturbaciones de acuerdo a la siguiente tabla: 
+            <figure class="centrar"><img src="imagenes/IEEE.png" alt="Tabla IEEE" id="tablaIEEE"></figure>
+                <figcaption class="centrar" id="tablaIEEE">Categorización de y caracteristicas de las principales perturbaciones en la energía eléctrica.</figcaption>
+        </article>
+            <br>
+            <br>
+            <fieldset id="interrupciones">
+                <legend><h2>Interrupciones</h2></legend>
+                <article id="interupp">
+                    Una interrupción (véase figura) es una pérdida completa de voltaje que puede durar desde 0.5
+                    ciclos hasta días, por lo regular se deben a fallas en el sistema eléctrico, accidentes, factores
+                    atmosféricos, caídas de rayos, etc. Se pueden dividir en [1], [2] y [3]:
+                    <br>
+                    <figure class="centrar"><img src="imagenes/interrupcion.png" alt="Interrupción" width="600" height="200" id="inte"></figure>
+                    <figcaption class="centrar" id="inte">Forma de onda cuando se presenta una interrupción</figcaption>
+                    <ul>
+                        <li><strong>Interrupciones sostenidas:</strong>Se presentan debido a fallas permanentes en el sistema eléctrico,
+                            su duración es mayor a 1 minuto.</li>
+                        <li><strong>Interrupciones momentáneas: </strong>Por lo regular son para protección por sobrecorriente que se
+                            hacen de forma automática, una vez cortada la corriente se reestablece de forma automática,
+                            su duración es menor a 3 segundos.</li>
+                        <li><strong>Interrupciones temporales: </strong>La duración es mayor a tres segundos y menor a 1 minuto.</li>
+                    </ul>
+                </article>
+            </fieldset>
+            <br>
+            <fieldset id="v_Transitorios">
+                <legend><h2>Voltajes Transitorios</h2></legend>
+                <article id="transitorios">
+                    Son variaciones en la amplitud de la onda de voltaje, regularmente son ocasionados por interruptores,
+                    causas atmosféricas, fallas intermitentes, entre otros, pueden ser de cinco tipos [2-5]:
+                    <br>
+                    <ul>
+                        <li><strong>Bajo voltaje <cite>(Undervoltage): </cite></strong>Se presentan debido a fallas permanentes en el sistema eléctrico,
+                            su duración es mayor a 1 minuto.
+                            <br>
+                            <figure class="centrar"><img src="imagenes/undervoltaje.png" alt="Undervoltage" width="600" height="200" id="under"></figure>
+                            
+                            <figcaption class="centrar" id="under">Forma de onda cuando se presenta un bajo voltaje.</figcaption>   
+                            <br>                          
+                        </li>
+
+                        <li><strong>Alto voltaje <cite>(Overvoltage): </cite></strong>Aumento de la magnitud del voltaje RMS entre 1.1 y 1.2 pu con
+                            duración de más de 1 minuto.
+                            <br>
+                            <figure class="centrar"><img src="imagenes/overvoltaje.png" alt="Overvoltage" width="600" height="200" id="over"></figure>
+                            
+                            <figcaption class="centrar" id="over">Forma de onda cuando se presenta un alto voltaje.</figcaption> 
+                            <br>                            
+                        </li>
+
+                        <li><strong><cite>Sag: </cite> </strong>Reducción del voltaje RMS de entre 0.1 y 0.9 pu a frecuencia de operación con duración
+                            entre 0.5 ciclos y 1 minuto.
+                            <br>
+                            <figure class="centrar"><img src="imagenes/sag.png" alt="Sag" width="600" height="200" id="sg"></figure>
+                            
+                            <figcaption class="centrar" id="sg">Forma de onda cuando se presenta un <cite>Sag</cite>.</figcaption>  
+                            <br>                           
+                        </li>
+
+                        <li><strong><cite>Swell: </cite></strong>Incremento del voltaje RMS entre 1.1 y 1.8 pu a frecuencia de operación con duración
+                            de entre 0.5 ciclos y 1 minuto.
+                            <br>
+                            <figure class="centrar"><img src="imagenes/swell.png" alt="Swell" width="600" height="200" id="sw"></figure>
+                            
+                            <figcaption class="centrar" id="sw">Forma de onda cuando se presenta un <cite>Swell</cite>.</figcaption>  
+                            <br>                           
+                        </li>
+
+                        <li><strong>Hendidura <cite>Notch</cite>: </strong>Disturbio periódico en la forma de onda del voltaje causado por equipos
+                            que conmutan la corriente de una fase a otra, se caracterizan por la disminución en la forma
+                            de onda del voltaje que puede ser de hasta medio ciclo.
+                            <br>
+                            <figure class="centrar"><img src="imagenes/notch.png" alt="Notch" width="600" height="200" id="nt"></figure>
+                            
+                            <figcaption class="centrar" id="nt">Forma de onda cuando se presenta un <cite>Notch</cite>.</figcaption>
+                            <br>                            
+                        </li>                           
+                </article>
+            </fieldset>
+            <fieldset id="Disturbios">
+                <legend><h2>Disturbios</h2></legend>
+                Es un evento transitorio de corta duración que se caracteriza por ser una discontinuidad repentida en
+                la forma de onda en cualquiera de los dos polos, se puede presentar en cualquier sistema eléctrico,
+                cualesquiera que sean los valores de magnitud y frecuencia. El origen puede ser externo (producidas
+                por descargas atmosféricas en las líneas eléctricas) o interno (operación de dispositivos de
+                conmutación, arranque de motores, etc.) Los tipos de disturbios son [1, 2 y 4]:
+                <ul>
+                    <li><strong>Impulso: </strong>También llamado pico transitorio de voltaje,
+                        son eventos repentinos de corta duración y alta magnitud de elevación de corriente, voltaje o
+                        ambos en una polaridad, por su amplitud y duración deben de ser estudiados por valores
+                        instantáneos, ya que los promediados no entregarían resultados correctos.
+                        <br>
+                        Los impulsos aparecen de forma poco frecuente, pero también pueden tener varias apariciones
+                        en el tiempo, este tipo de eventos aparecen en cualquier parte de la red eléctrica y de ahí se
+                        propagan, para su estudio se considera que aparecen al mismo tiempo en todos los lugares,
+                        pero con parámetros diferentes, ya que su energía disminuye con la distancia [6].
+                            <br>
+                            <figure class="centrar"><img src="imagenes/impulso.png" alt="Impulso" width="600" height="200" id="imp"></figure>
+                            
+                            <figcaption class="centrar" id="imp">Forma de onda cuando se presenta un impulso.</figcaption>   
+                            <br>                          
+                        </li>
+
+                        <li><strong>Oscilatorio: </strong>Son eventos repentinos en los que se produce un cambio de
+                            polaridades de forma alternada y rápida, ya sea de voltaje, corriente o ambas.
+                            <br>
+                            <figure class="centrar"><img src="imagenes/oscilatorio.png" alt="Oscilatorio" width="600" height="200" id="Osc"></figure>
+                            
+                            <figcaption class="centrar" id="Osc">Forma de onda cuando se presenta un oscilatorio.</figcaption> 
+                            <br>                            
+                        </li>
+
+                        <li><strong>Tormentas Eléctrica: </strong>La descarga de un rayo en un conductor provoca disturbios
+                            caracterizados por su corta duración y valores de cresta elevados.</li>
+                </ul>
+            </fieldset>
+
+            <fieldset id="armonicos">
+                <legend><h2>Armónicos</h2></legend>
+                Son señales senoidales que son múltiplos enteros de la frecuencia fundamental de voltaje o corriente
+                del sistema, éstas señales se suman a la forma de onda original, lo cual provoca una deformación en
+                la forma de onda que llega al usuario, lo que se conoce como distorsión armónica (véase figura 2.13).
+                Normalmente no son provocadas por las empresas proveedoras del servicio eléctrico, son provocadas
+                por usuarios que conectan cargas no lineales al sistema, si los armónicos llegan a una cierta magnitud
+                pueden llegar a dañar los aparatos eléctricos [2] y [4].
+                <br>
+                <figure class="centrar"><img src="imagenes/armonico.png" alt="Armónico" width="600" height="200" id="arm"></figure>
+                    
+                    <figcaption class="centrar" id="arm">Forma de onda con distorsión armónica.</figcaption>   
+                <br>  
+            </fieldset>
+
+            <fieldset id="armonicosNE">
+                <legend><h2>Armónicos no Enteros</h2></legend>
+                Son una variación de los armónicos, cuyas señales son senoidales, pero no son múltiplos enteros de
+                la frecuencia fundamental del sistema, se pueden dividir en interarmónicos (frecuencias mayores a la
+                fundamental) y subarmónicos (frecuencias menores a la fundamental). Son provocadas por
+                operaciones que se realizan a frecuencias diferentes a la fundamental, los soldadores de puntos y
+                cicloconvertidores son algunos ejemplos de generadores de este tipo de señales [5] y [7].
+                <br>
+            </fieldset>
+
+            <fieldset id="ruido">
+                <legend><h2>Ruido</h2></legend>
+                Son señales eléctricas no deseadas, a frecuencias menores de 200 kHz y que se superponen sobre la
+                forma de onda de voltaje o corriente, en la figura 2.14 se muestra una forma de onda con ruido [5]
+                <br>
+                <figure class="centrar"><img src="imagenes/ruido.png" alt="Ruido" width="400" height="200" id="rd"></figure>
+                    
+                    <figcaption class="centrar" id="rd">Forma de onda con ruido.</figcaption>   
+                <br>  
+            </fieldset>
+
+            <fieldset id="parpadeo">
+                <legend><h2>Parpadeo</h2></legend>
+                Cambio perceptible en la intensidad luminosa de una fuente de luz debido a un cambio repentino en
+                el voltaje de alimentación (aumento o disminución). Los cambios de voltaje provocan pulsaciones
+                recurrentes en la luminosidad [4] y [7].
+                <br>
+            </fieldset>
+
+            <fieldset id="fluctuaciones">
+                <legend><h2>Fluctuaciones de tensión</h2></legend>
+                Son variaciones periódicas de tensión o series de cambios aleatorios en la tensión de la red eléctrica
+                (véase figura 2.15), estas variaciones se dan entre dos niveles consecutivos de tensión que se
+                mantienen durante un tiempo finito y su amplitud no supera el ±10% del valor nominal. Las
+                fluctuaciones se pueden dividir en cuatro tipos [6]:
+                <ul>
+                    <li>
+                        <strong>Tipo A: </strong> Variaciones rectangulares con periodos constantes.
+                    </li>
+
+                    <li>
+                        <strong>Tipo B: </strong>Escalones de tensión que se presentan de forma irregular y cuya magnitud pueden
+                        variar tanto en el lado positivo como en el negativo.
+                    </li>
+                    <li>
+                        <strong>Tipo C: </strong>Cambios en la tensión separados que no siempre tienen escalones de tensión.
+                    </li>
+                    
+                    <li>
+                        <strong>Tipo D: </strong>Series de fluctuaciones esporádicas.
+                    </li>
+                    
+                </ul>
+                <br>
+                <figure class="centrar"><img src="imagenes/fluctuaciones.png" alt="Fluctuaciones" width="400" height="300" id="ft"></figure>
+                    
+                    <figcaption class="centrar" id="ft">Tipos de fluctuaciones de voltaje.</figcaption>   
+                <br>  
+            </fieldset>
+            <fieldset id="varFrecuencia">
+                <legend><h2>Variación de Frecuencia</h2></legend>
+                Las variaciones de frecuencia de un sistema eléctrico se producen cuando se rompe el equilibrio entre
+                la carga y la generación, en condiciones normales, la capacidad de generación es superior al consumo
+                y se tiene una cierta energía de reserva para compensar el sistema en caso de que se tenga una variación
+                brusca de la carga, la energía de reserva permitiría conservar el sistema dentro del margen de
+                tolerancia de la frecuencia, sin embargo, si el consumo sobrepasa la generación, la frecuencia baja y
+                al salirse del margen de tolerancia el sistema puede llegar a colapsarse, una manera rápida de
+                reestablecer el sistema es la desconexión temporal de cargas [6]. La variación de frecuencia se da
+                cuando se mide un valor fuera del rango de ±2.5% Hz en la red eléctrica [8].
+                <br>
+                También es posible que la generación sobrepase el consumo, con ello se aumenta la frecuencia del
+                sistema y para alcanzar de nuevo el equilibrio simplemente se reduce la capacidad de generación.
+                <br>
+            </fieldset>
+            <fieldset id="referencias">
+                <h2 class="centrar">Rerefencias</h2>
+                <ol>
+                    <li>V. Mercado, J. B. Peña y L. Pacheco, <q><cite>Calidad de energía eléctrica bajo la perspectiva de los
+                        sistemas de puesta a tierra</cite></q>, Ciencia e ingeniería, vol. 38, no. 2, pp. 167-182, 2017.</li>
+                    <li>Z. C. Flores, <q><cite>Factores que afectan la calidad de la energía y su solución</cite></q>, trabajo de fin de
+                        grado, Instituto Politécnico Nacional, CDMX, México, 2008.</li>
+                    <li><q><cite>IEEE Recommended Practice for Monitoring Electric Power Quality</cite></q>, en in IEEE Std 1159-
+                        1995, pp.1-80, 30 Nov. 1995.</li>
+                    <li>S. Ramírez y E. A. Cano, <q><cite>Calidad de servicio de energía eléctrica</cite></q>, 1ª ed. Centro de
+                        Publicaciones Universidad Nacional de Colombia, 2006.</li>
+                    <li>J. L. Arizpe, S. Neira y A. López, <q><cite>Calidad de energía y sistemas eléctricos de potencia</cite></q>,
+                        Multidisciplinas de la Ingeniería, vol. 1, no. 1, pp. 29-54, octubre 2013.
+                    </li>
+                    <li>S. Blanco, <q><cite>Análisis sobre la calidad de la energía en redes eléctricas</cite></q>. [En línea]. Disponible: 
+                        <a href="https://docplayer.es/14563395-Medicion-de-la-calidad-de-la-energia.html">https://docplayer.es/14563395-Medicion-de-la-calidad-de-la-energia.html.</a>  
+                        [Accedido: 24 de febrero 2022].</li>
+                    <li>A. Eigeles y J. McNeill, <q><cite>Electric Power Quality</cite></q>, Annual Reviews, vol. 22, pp. 263-303,
+                        1997.                
+                    </li>
+                    <li>BrainKart, <q><cite>Power frequency variations</cite></q>. [En línea]. Disponible: 
+                        <a href="https://www.brainkart.com/article/Power-frequency-variations_11694/">https://www.brainkart.com/article/Power-frequency-variations_11694/.</a>  
+                        [Accedido: 06 de mayo 2022].</li>
+                </ol>
+                
+            </fieldset>
+    </main>
+<footer id="pie">
+    <fieldset class="centrar">
+        
+        <a href="https://www.morelia.tecnm.mx" class="fuente">Tecnológico Nacional de México Campus Morelia</a>
+        <br>
+        <a href="http://sagitario.itmorelia.edu.mx/pelectron/" class="fuente">Maestría en Ciencias en Ingeniería Electrónica</a>
+        <!-- Agregar hora y fecha -->
+    </fieldset>
+</footer> 
+</body>
+</html>

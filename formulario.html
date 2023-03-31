@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detector de Perturbaciones en Tiempo Real</title>
+    <link rel="stylesheet" href="css/estilos.css">
+    <script src="js/jquery-3.6.4.min.js"></script>
+    <script src="js/funciones.js"></script> 
+</head>
+<body id="contenedor">
+    <header id="encabezado">
+        <section id="ImagenesTop">
+            <picture id="Sep">
+                <img src="imagenes/seplogo.png" alt="IT Morelia" id="Sep">      
+            </picture>
+            <picture id="Cona">
+                <img src="imagenes/conacyt.png" alt="IT Morelia" id="Cona">      
+            </picture>
+            <picture id="Tecnm">
+                <img src="imagenes/TecNM_logo.png" alt="TecNM" id="Tecnm">
+            </picture>
+            <picture id="Itmorelia">
+                <img src="imagenes/Itmorelia.png" alt="IT Morelia" id="Itmorelia">      
+            </picture>
+            <picture id="Pcie">
+                <img src="imagenes/pcie.png" alt="IT Morelia" id="Pcie">      
+            </picture>
+            
+        </section>
+        <fieldset>
+            <h1 class="centrar">Calidad de la energía</h1>
+        </fieldset>   
+    </header>
+    <aside id="menu">
+        <h2 class="centrar">Menu</h2>
+        <ul>        
+            <li><a href="index.html" class="fuente">Inicio</a></li>
+            <br>
+            <li> <a href="perturbaciones.html" class="fuente">Perturbaciones</a></li>
+            <br>
+            <li><a href="detector.html" class="fuente">Detector Propuesto</a></li>
+            <br>
+            <li><a href="acerca.html" class="fuente">Acerca de</a></li>
+            <br>
+            <li><a href="formulario.html" class="centrar fuente">Iniciar Sesión</a></li>
+        </ul>
+    </aside>
+    <main id="contenido">
+        <fieldset id="formulario">
+            <form action="formulario.php" name="formulario1">
+                <article id="usuario">
+                    
+                    <h2 class="centrar">Información del Usuario</h2>
+                    
+                    <label for="nombre">Escribe tu nombre(s): </label>        
+                    <input type="text" name="nombre" id="nombre"><span id="ComprobarNombre">*</span>
+                    <br>
+                    <label for="apellidos">Escribe tus apellidos: </label>        
+                    <input type="text" name="apellidos" id="apellidos"><span id="ComprobarApellido">*</span>
+                    <br>    
+                    <label for="Fecha">Fecha de nacimiento: </label><input type="date" name="Fecha" id="">
+                    <br>
+                    <label for="email">Correo electrónico: </label><input type="email" id="correo"><span id="ComprobarEmail">*</span>
+                    <br>
+                    <label for="institucion">Institución en la que estudias/estudiaste: </label> 
+                    <input type="text" name="institucion" placeholder="">
+                    <br>
+                    <select name="grado" id="grado" required>
+                        <optgroup>
+                            <option value="Primaria">Primaria</option>
+                            <option value="Secundaria">Secundaria</option>
+                            <option value="Bachillerato">Bachillerato</option>
+                            <option value="Licenciatura">Licenciatura</option>
+                            <option value="Posgrado" selected>Posgrado</option>
+                        </optgroup>
+                    </select>
+                    <br>
+                    <label for="carrera">Carrera/Posgrado/Bachillerato técnico estudiado: </label>        
+                    <input type="text" name="carrera">
+                    <br>
+                    <h3>Contraseña</h3>
+                    <label for="Contra">Contraseña: </label><input type="password" name="contra1" id="contra1">
+                    
+                    <span id="ComprobarContra">*</span>
+                    <br>
+                    <label for="Contra">Confirma la contraseña: </label><input type="password" name="contra2" id="contra2">
+                    <span id="ComprobarContra2">*</span>
+                    <br>
+    
+                </article>
+                <input type="button" value="Enviar" id="enviar" onclick="enviarFormulario()">
+                <input type="reset" value="Limpiar" id="Limpiar">
+            </form>
+        </fieldset>
+    </main>
+<footer id="pie">
+    <fieldset class="centrar">
+        
+        <a href="https://www.morelia.tecnm.mx" class="fuente">Tecnológico Nacional de México Campus Morelia</a>
+        <br>
+        <a href="http://sagitario.itmorelia.edu.mx/pelectron/" class="fuente">Maestría en Ciencias en Ingeniería Electrónica</a>
+        <!-- Agregar hora y fecha -->
+    </fieldset>
+</footer> 
+</body>
+</html>

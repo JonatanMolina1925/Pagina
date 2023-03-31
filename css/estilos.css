@@ -1,0 +1,67 @@
+
+#encabezado {
+    border-radius: 3px;
+    background-color:#B4D2D9;
+    grid-area: encabezado;
+}
+
+#pie{
+    border-radius: 3px;
+    background-color:#B4D2D9;
+    grid-area: pie;
+ 
+}
+
+.centrar{
+    text-align:center ;
+}
+
+.fuente{
+    font-size: 13pt;
+    color: black;
+}
+
+#menu{
+    background-color: #B4D2D9;
+    grid-area: lateral;
+
+}
+#contenido{
+    margin: 0%;
+    background-color: #013440;
+    color: white;
+    grid-area: contenido;   
+    text-align: justify;
+}
+
+#contenedor{
+    display: grid;
+    grid-template-areas:    'encabezado encabezado encabezado'
+                            'lateral contenido contenido'
+                            'lateral pie pie';
+}
+
+
+#ImagenesTop{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+#Tecnm{
+    width: 150px;
+}
+
+#Itmorelia{
+    width: 75px ;   
+}
+#Pcie{
+    width: 200px ; 
+}
+#Cona{
+    width: 80px ; 
+}
+
+#Sep{
+    width: 210px ; 
+}
