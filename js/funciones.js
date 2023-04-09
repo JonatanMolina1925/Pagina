@@ -121,3 +121,20 @@ function verificarContra(){
     }
 }
 
+const posicionar = (pos) => {
+    let latitud = pos.coords.latitude
+    let longitud = pos.coords.longitude
+    let centro = latitud+","+longitud
+    // alert(centro)
+    $("#mapa").html("<img src='https://maps.googleapis.com/maps/api/staticmap?center=19.7113119,-101.2313059&zoom=14&size=600x400&key='>")
+}
+
+$(function(){  
+    if(navigator.geolocation){
+        //Código para obtener el punto de referencia
+        navigator.geolocation.getCurrentPosition(posicionar)
+    }else{
+        $("#mapa").html("Tu navegador no soporta geolocalización")
+    }
+})
+
