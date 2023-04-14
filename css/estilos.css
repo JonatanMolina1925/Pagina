@@ -72,3 +72,9 @@
     height: 400px;
     margin: 0 auto;
 }
+
+fieldset{
+    padding: 0%;
+    border: 2px solid white;
+    font-size: 16pt;
+}
