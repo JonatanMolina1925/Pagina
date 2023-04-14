@@ -23,6 +23,8 @@
 
 #menu{
     background-color: #B4D2D9;
+    border: 2px solid white;
+    width: 200px;
     grid-area: lateral;
 
 }
