@@ -1,4 +1,4 @@
-
+let usuario = "Sin sesión iniciada"
 const conmutar = () => {
     $("#menu").toggle(1000)
 }
@@ -16,7 +16,6 @@ function enviarFormulario(){
     if(nombre == 1  && apellido == 1 && correo == 1 && contra == 1){
         document.formulario1.submit();
     }
-
 }
 function verificarNombre(){
     var caracNombre=/^[a-zA-ZÑñÁáÉéÍíÓóÚúÜü\s]+$/;
@@ -138,3 +137,44 @@ $(function(){
     }
 })
 
+function ComprobarDatos(){
+    let Contra = iniciarContra();
+    let Correo = iniciarCorreo();
+    var correo = document.getElementById("correoI");
+
+    if(Contra == 1 && Correo == 1){
+        usuario = correo.value;
+        $("#Usuario").html(usuario);
+    }
+}
+
+function iniciarCorreo(){
+    var correo = document.getElementById("correoI");
+    let correoGuardado = "jonatanali1925@gmail.com";
+
+    if(correo.value == correoGuardado){
+        $("#comproEmail").html("* Correo registrado.");
+        $("#comproEmail").css("color", "green");
+        return 1;
+    }else{
+        $("#comproEmail").html("* El correo no está registrado.");
+        $("#comproEmail").css("color", "red");
+        return 0;
+    }
+}
+
+function iniciarContra(){
+    var pass = document.getElementById("contraI");
+    let contraGuardada = "Medina1925.";
+
+    if(pass.value == contraGuardada){
+        $("#comproContra").html("* Contraseña correcta.");
+        $("#comproContra").css("color", "green");
+        return 1;
+    }else{
+        $("#comproContra").html("* Contraseña incorrecta.");
+        $("#comproContra").css("color", "red");
+        return 0;
+    }
+
+}

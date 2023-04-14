@@ -31,7 +31,7 @@
             
         </section>
         <fieldset>
-            <h1 class="centrar">Calidad de la energía</h1>
+            <h1 class="centrar">Registro/ Inicio de sesión</h1>
         </fieldset>   
     </header>
     <aside id="menu">
@@ -47,13 +47,15 @@
             <br>
             <li><a href="formulario.html" class="centrar fuente">Iniciar Sesión</a></li>
         </ul>
+        <h3 class="centrar">Usuario</h3>
+        <h4 id="Usuario" class="centrar">Sin sesión iniciada</h4>
     </aside>
     <main id="contenido">
         <fieldset id="formulario">
             <form action="formulario.php" name="formulario1">
                 <article id="usuario">
                     
-                    <h2 class="centrar">Información del Usuario</h2>
+                    <h2 class="centrar">Registrarse</h2>
                     
                     <label for="nombre">Escribe tu nombre(s): </label>        
                     <input type="text" name="nombre" id="nombre"><span id="ComprobarNombre">*</span>
@@ -92,6 +94,18 @@
     
                 </article>
                 <input type="button" value="Enviar" id="enviar" onclick="enviarFormulario()">
+                <input type="reset" value="Limpiar" id="Limpiar">
+            </form>
+
+            <form action="inicioSesion.php" name="formulario2">
+                <article id="iniciarSesion">
+                    
+                    <h2 class="centrar">Iniciar sesión</h2>
+                    <label for="email">Correo electrónico: </label><input type="email" id="correoI"><span id="comproEmail">*</span>
+                    <br>
+                    <label for="Contra">Contraseña: </label><input type="password" name="contraI" id="contraI"><span id="comproContra">*</span>
+                </article>
+                <input type="button" value="Iniciar sesión" id="Iniciar" onclick="ComprobarDatos()">
                 <input type="reset" value="Limpiar" id="Limpiar">
             </form>
         </fieldset>
