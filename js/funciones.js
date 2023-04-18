@@ -1,10 +1,11 @@
-let usuario = "Sin sesión iniciada"
 const conmutar = () => {
     $("#menu").toggle(1000)
 }
 
 $(document).ready(function(){
     $("h1").click(conmutar)
+    let usuario = localStorage.getItem("usuario");
+    $("#Usuario").html(usuario);
 })
 
 function enviarFormulario(){
@@ -143,7 +144,8 @@ function ComprobarDatos(){
     var correo = document.getElementById("correoI");
 
     if(Contra == 1 && Correo == 1){
-        usuario = correo.value;
+        localStorage.setItem("usuario", correo.value);
+        let usuario = localStorage.getItem("usuario");
         $("#Usuario").html(usuario);
     }
 }
@@ -178,3 +180,9 @@ function iniciarContra(){
     }
 
 }
+
+function cerrarSesion(){
+    localStorage.removeItem("usuario");
+    $("#Usuario").html("");
+}
+

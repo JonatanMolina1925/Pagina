@@ -30,32 +30,25 @@
             </picture>
             
         </section>
-        <fieldset>
+        <div id="menu">     
+            <a href="index.html" class="fuenteMenu">Inicio</a>
+            <a href="perturbaciones.html" class="fuenteMenu">Perturbaciones</a>
+            <a href="detector.html" class="fuenteMenu">Detector Propuesto</a>
+            <a href="acerca.html" class="fuenteMenu">Acerca de</a>
+            <a href="formulario.html" class="fuenteMenu">Iniciar Sesión</a>
+            <span id="Usuario" class="fuenteMenu"></span>
+        </div>
+        <fieldset id="titulo">
             <h1 class="centrar">Registro/ Inicio de sesión</h1>
         </fieldset>   
     </header>
-    <aside id="menu">
-        <h2 class="centrar">Menu</h2>
-        <ul>        
-            <li><a href="index.html" class="fuente">Inicio</a></li>
-            <br>
-            <li> <a href="perturbaciones.html" class="fuente">Perturbaciones</a></li>
-            <br>
-            <li><a href="detector.html" class="fuente">Detector Propuesto</a></li>
-            <br>
-            <li><a href="acerca.html" class="fuente">Acerca de</a></li>
-            <br>
-            <li><a href="formulario.html" class="centrar fuente">Iniciar Sesión</a></li>
-        </ul>
-        <h3 class="centrar">Usuario</h3>
-        <h4 id="Usuario" class="centrar">Sin sesión iniciada</h4>
-    </aside>
+    
     <main id="contenido">
         <fieldset id="formulario">
             <form action="formulario.php" name="formulario1">
                 <article id="usuario">
                     
-                    <h2 class="centrar">Registrarse</h2>
+                    <h2>Registrarse</h2>
                     
                     <label for="nombre">Escribe tu nombre(s): </label>        
                     <input type="text" name="nombre" id="nombre"><span id="ComprobarNombre">*</span>
@@ -83,9 +76,7 @@
                     <label for="carrera">Carrera/Posgrado/Bachillerato técnico estudiado: </label>        
                     <input type="text" name="carrera">
                     <br>
-                    <h3>Contraseña</h3>
                     <label for="Contra">Contraseña: </label><input type="password" name="contra1" id="contra1">
-                    
                     <span id="ComprobarContra">*</span>
                     <br>
                     <label for="Contra">Confirma la contraseña: </label><input type="password" name="contra2" id="contra2">
@@ -100,18 +91,19 @@
             <form action="inicioSesion.php" name="formulario2">
                 <article id="iniciarSesion">
                     
-                    <h2 class="centrar">Iniciar sesión</h2>
+                    <h2>Iniciar sesión</h2>
                     <label for="email">Correo electrónico: </label><input type="email" id="correoI"><span id="comproEmail">*</span>
                     <br>
                     <label for="Contra">Contraseña: </label><input type="password" name="contraI" id="contraI"><span id="comproContra">*</span>
                 </article>
                 <input type="button" value="Iniciar sesión" id="Iniciar" onclick="ComprobarDatos()">
                 <input type="reset" value="Limpiar" id="Limpiar">
+                <input type="button" value="Cerrar sesión" id="Cerrar" onclick="cerrarSesion()">
             </form>
         </fieldset>
     </main>
 <footer id="pie">
-    <fieldset class="centrar">
+    <fieldset class="centrar" id="bottom">
         
         <a href="https://www.morelia.tecnm.mx" class="fuente">Tecnológico Nacional de México Campus Morelia</a>
         <br>

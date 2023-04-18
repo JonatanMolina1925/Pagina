@@ -1,15 +1,12 @@
 
 #encabezado {
-    border-radius: 3px;
     background-color:#B4D2D9;
-    grid-area: encabezado;
+    /* grid-area: encabezado; */
 }
 
 #pie{
-    border-radius: 3px;
-    background-color:#B4D2D9;
-    grid-area: pie;
- 
+    background-color: #F2E9E4;
+    /* grid-area: pie; */
 }
 
 .centrar{
@@ -17,32 +14,30 @@
 }
 
 .fuente{
-    font-size: 13pt;
+    font-size: 15pt;
+    color: black;
+}
+
+.fuenteMenu{
+    font-size: 18pt;
     color: black;
 }
 
 #menu{
-    background-color: #B4D2D9;
-    border: 2px solid white;
-    width: 200px;
-    grid-area: lateral;
+    display: flex;
+    background-color: #F2E9E4;
+    justify-content: space-around;
+    /* width: 200px;
+    grid-area: lateral; */
 
 }
 #contenido{
-    margin: 0%;
     background-color: #013440;
     color: white;
-    grid-area: contenido;   
+    border: 5px solid white;
+    /* grid-area: contenido;    */
     text-align: justify;
 }
-
-#contenedor{
-    display: grid;
-    grid-template-areas:    'encabezado encabezado encabezado'
-                            'lateral contenido contenido'
-                            'lateral pie pie';
-}
-
 
 #ImagenesTop{
     display: flex;
@@ -77,6 +72,6 @@
 
 fieldset{
     padding: 0%;
-    border: 2px solid white;
     font-size: 16pt;
+    border: 0px;
 }
