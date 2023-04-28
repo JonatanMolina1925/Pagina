@@ -51,44 +51,62 @@
             </header>
           </div>
         <fieldset id="titulo">
-            <h1 class="centrar link-primary">Acerca de</h1>
+            <h1 class="centrar link-primary">Iniciar Sesión</h1>
         </fieldset>   
     </header>
     
     <main id="contenido" class="bg-dark text-white">
-        <fieldset id="institucion">
-            <article id="autores">
-                <h2 class="centrar">Información de contacto</h2>
-                <ul id="inf_autor">
-                    <li>
-                        <strong>Autor: </strong> Jonatan Ali Medina Molina
-                    </li>
-                    <li>
-                        <strong>Correo institucional: </strong> <a href="m17121124@morelia.tecnm.mx" class="px-2 link-light">m17121124@morelia.tecnm.mx</a>
-                    </li>
-                    <li>
-                        <strong>Correo personal: </strong> <a href="jonatanali1925@gmail.com" class="px-2 link-light">jonatanali1925@gmail.com</a>
-                    </li>
-                    <li>
-                        <strong>LinkedIn: </strong> <a href="www.linkedin.com/in/jonatan-ali-medina-molina-275288209" class="px-2 link-light">Jonatan Ali Medina Molina</a>
-                    </li>
-                </ul>
-                <ul id="inf_director">
-                    <li><strong>Director de Tesis: </strong> Enrique Reyes Archundia</li>
-                    <li><strong>Correo institucional: </strong> <a href="enrique.ra@morelia.tecnm.mx" class="px-2 link-light">enrique.ra@morelia.tecnm.mx</a></li>
-                </ul>   
-            </article>  
-            <h2 class="centrar">Ubicación de la Institución</h2>
-            El proyecto fue realizado para obtener el grado de Maestría en Ciencias en Ingeniería Electrónica
-            en el Tecnológico Nacional de México Campus Morelia, Avenida Tecnológico #1500, col. Santiaguito. 
-            c.P. 58120, Morelia, Michoacán, México.
-            <div id="mapa">
-            </div>       
-        </fieldset>
+        <form  action="iniciarSesion.php" name="formulario2">
+          <div class="row g-2">
+              <div class="col-md-7 col-lg-8">
+                  <div class="row g-3">
+                    <div class="col-sm-6">
+                    </div>
+                    <div class="col-sm-6">
+                      <label for="correoI" class="form-label">Correo electrónico: <span id="comproEmail" ></span></label>
+                      <input type="email" name="correoI" id="correoI" class="form-control" placeholder="usuario@ejemplo.com">
+                    </div>
+        
+                    <div class="col-sm-6">
+                    </div>
+
+                    <div class="col-sm-6">
+                    </div>
+                    <div class="col-sm-6">
+
+                    </div>
+
+                    <div class="col-sm-6">
+                      <label for="contraI" class="form-label">Contraseña: <span id="comproContra"></span></label>
+                      <input type="password" name="contraI" class="form-control" id="contraI">
+                    </div>
+                    <div class="col-sm-6">
+
+                      </div>
+                      <div class="col-sm-6">
+                        <div class="row g-3">
+                            <div class="col-sm-4">
+                                <input type="button" class="w-100 btn btn-lg btn-primary" value="Iniciar sesión" id="Iniciar" onclick="ComprobarDatos()">
+                            </div>
+                            <div class="col-sm-4">
+                                <input type="reset" class="w-100 btn btn-lg btn-secondary" value="Limpiar" id="Iniciar">
+                            </div>
+                            <div class="col-sm-4">
+                                <input type="button" class="w-100 btn btn-lg btn-danger" value="Cerrar sesión" id="Cerrar" onclick="cerrarSesion()">
+                            </div>
+                        </div>
+
+                    </div>
+
+                  </div>
+              </div>
+          </div>
+        </form>
     </main>
+
 <footer id="pie" class="bg-dark text-white">
     <fieldset class="centrar" id="bottom">
-        
+        <br>
         <a href="https://www.morelia.tecnm.mx" class="nav-link px-2 link-primary">Tecnológico Nacional de México Campus Morelia</a>
         <br>
         <a href="http://sagitario.itmorelia.edu.mx/pelectron/" class="nav-link px-2 link-primary">Maestría en Ciencias en Ingeniería Electrónica</a>

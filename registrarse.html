@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detector de Perturbaciones en Tiempo Real</title>
+    <link rel="stylesheet" href="css/estilos.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script src="js/jquery-3.6.4.min.js"></script>
+    <script src="js/funciones.js"></script> 
+</head>
+<body id="contenedor">
+    <header id="encabezado" class="bg-dark">
+        <section id="ImagenesTop">
+            <picture id="Sep" class="bg-white">
+                <img src="imagenes/seplogo.png" alt="IT Morelia" id="Sep">      
+            </picture>
+            <picture id="Cona" class="bg-white">
+                <img src="imagenes/conacyt.png" alt="IT Morelia" id="Cona">      
+            </picture>
+            <picture id="Tecnm" class="bg-white">
+                <img src="imagenes/TecNM_logo.png" alt="TecNM" id="Tecnm">
+            </picture>
+            <picture id="Itmorelia" class="bg-white">
+                <img src="imagenes/Itmorelia.png" alt="IT Morelia" id="Itmorelia">      
+            </picture>
+            <picture id="Pcie" class="bg-white">
+                <img src="imagenes/pcie.png" alt="IT Morelia" id="Pcie">      
+            </picture>
+            
+        </section>
+        <div class="container bg-dark">
+            <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
+              <div class="col-md-3 mb-2 mb-md-0">
+                <span id="Usuario" class="nav-link px-2 link-primary"></span>
+              </div>
+        
+              <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0 fuenteMenu ">
+                <li><a href="index.html" class="nav-link px-2 link-secondary">Inicio</a></li>
+                <li><a href="perturbaciones.html" class="nav-link px-2">Perturbaciones</a></li>
+                <li><a href="detector.html" class="nav-link px-2">Detector propuesto</a></li>
+                <li><a href="acerca.html" class="nav-link px-2">Acerca de</a></li>
+              </ul>
+        
+              <div class="col-md-3 text-end">
+                <a href="iniciar.html" class="btn btn-outline-primary me-2">Iniciar Sesión</a>
+                <a href="registrarse.html" class="btn btn-primary">Registrarse</a>
+              </div>
+            </header>
+          </div>
+        <fieldset id="titulo">
+            <h1 class="centrar link-primary">Registro</h1>
+        </fieldset>   
+    </header>
+    
+    <main id="contenido" class="bg-dark text-white">
+        <form  action="formulario.php" name="formulario1">
+          <div class="row g-5">
+              <div class="col-md-5 col-lg-4 order-md-last">
+                  <br>
+                  <br>
+                  <br>
+                  <br>
+                  <br>
+                  <input type="button" class="btn btn-primary" value="Registrarse" id="enviar" onclick="enviarFormulario()">
+                  <input type="reset" class="btn btn-secondary" value="Limpiar" id="Limpiar">
+                </div>
+
+              <div class="col-md-7 col-lg-8">
+                  <div class="row g-3">
+                    <div class="col-sm-6">
+                      <label for="nombre" class="form-label">Nombre(s) <span id="ComprobarNombre"></span></label>
+                      <input type="text" name="nombre" id="nombre" class="form-control" placeholder="Jonatan Ali">
+                    </div>
+
+                    <div class="col-sm-6">
+                      <label for="apellidos" class="form-label">Apellidos(s) <span id="ComprobarApellido" ></span></label>
+                      <input type="text" name="apellidos" id="apellidos" class="form-control" placeholder="Medina Molina">
+                    </div>
+        
+                    <div class="col-sm-6">
+                      <label for="Fecha" class="form-label">Fecha de nacimiento </label>
+                      <input type="date" name="Fecha" class="form-control" id="Fecha" placeholder="Username" required>
+                    </div>
+
+                    <div class="col-sm-6">
+                      <label for="email" class="form-label">Correo electrónico <span id="ComprobarEmail"></span></label>
+                      <input type="email" name="Fecha" class="form-control" id="correo" placeholder="usuario@ejemplo.com">
+                    </div>
+                    <div class="col-sm-6">
+                      <label for="grado" class="form-label">Grado académico</label>
+                      <select class="form-select" id="grado"  name="grado" required>
+                        <optgroup>
+                          <option value="Primaria">Primaria</option>
+                          <option value="Secundaria">Secundaria</option>
+                          <option value="Bachillerato">Bachillerato</option>
+                          <option value="Licenciatura">Licenciatura</option>
+                          <option value="Posgrado" selected>Posgrado</option>
+                      </optgroup>
+                      </select>
+                    </div>
+
+                    <div class="col-sm-6">
+                      <label for="institucion" class="form-label">Institución donde obtuvo su grado académico: </label>
+                      <input type="text" name="institucion" class="form-control" id="institucion" placeholder="TecNM Campus Morelia" >
+                    </div>
+                    <div class="col-sm-6">
+                      <label for="contra1" class="form-label">Contraseña <span id="ComprobarContra" ></span></label>
+                      <input type="password" name="contra1" class="form-control" id="contra1">
+                    </div>
+
+                    <div class="col-sm-6">
+                      <label for="contra2" class="form-label">Confirma la contraseña <span id="ComprobarContra2"></span></label>
+                      <input type="password" name="contra2" class="form-control" id="contra2">
+                    </div>
+                  </div>
+              </div>
+          </div>
+        </form>
+    </main>
+<footer id="pie" class="bg-dark text-white">
+    <fieldset class="centrar" id="bottom">
+        <br>
+        <a href="https://www.morelia.tecnm.mx" class="nav-link px-2 link-primary">Tecnológico Nacional de México Campus Morelia</a>
+        <br>
+        <a href="http://sagitario.itmorelia.edu.mx/pelectron/" class="nav-link px-2 link-primary">Maestría en Ciencias en Ingeniería Electrónica</a>
+        <!-- Agregar hora y fecha -->
+    </fieldset>
+</footer> 
+</body>
+</html>

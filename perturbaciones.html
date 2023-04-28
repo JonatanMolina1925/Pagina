@@ -6,44 +6,56 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Detector de Perturbaciones en Tiempo Real</title>
     <link rel="stylesheet" href="css/estilos.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
     <script src="js/jquery-3.6.4.min.js"></script>
     <script src="js/funciones.js"></script> 
 </head>
 <body id="contenedor">
-    <header id="encabezado">
+    <header id="encabezado" class="bg-dark">
         <section id="ImagenesTop">
-            <picture id="Sep">
+            <picture id="Sep" class="bg-white">
                 <img src="imagenes/seplogo.png" alt="IT Morelia" id="Sep">      
             </picture>
-            <picture id="Cona">
+            <picture id="Cona" class="bg-white">
                 <img src="imagenes/conacyt.png" alt="IT Morelia" id="Cona">      
             </picture>
-            <picture id="Tecnm">
+            <picture id="Tecnm" class="bg-white">
                 <img src="imagenes/TecNM_logo.png" alt="TecNM" id="Tecnm">
             </picture>
-            <picture id="Itmorelia">
+            <picture id="Itmorelia" class="bg-white">
                 <img src="imagenes/Itmorelia.png" alt="IT Morelia" id="Itmorelia">      
             </picture>
-            <picture id="Pcie">
+            <picture id="Pcie" class="bg-white">
                 <img src="imagenes/pcie.png" alt="IT Morelia" id="Pcie">      
             </picture>
             
         </section>
-        <div id="menu">     
-            <a href="index.html" class="fuenteMenu">Inicio</a>
-            <a href="perturbaciones.html" class="fuenteMenu">Perturbaciones</a>
-            <a href="detector.html" class="fuenteMenu">Detector Propuesto</a>
-            <a href="acerca.html" class="fuenteMenu">Acerca de</a>
-            <a href="formulario.html" class="fuenteMenu">Iniciar Sesión</a>
-            <span id="Usuario" class="fuenteMenu"></span>
-        </div>
+        <div class="container bg-dark">
+            <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
+              <div class="col-md-3 mb-2 mb-md-0">
+                <span id="Usuario" class="nav-link px-2 link-primary"></span>
+              </div>
+        
+              <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0 fuenteMenu ">
+                <li><a href="index.html" class="nav-link px-2 link-secondary">Inicio</a></li>
+                <li><a href="perturbaciones.html" class="nav-link px-2">Perturbaciones</a></li>
+                <li><a href="detector.html" class="nav-link px-2">Detector propuesto</a></li>
+                <li><a href="acerca.html" class="nav-link px-2">Acerca de</a></li>
+              </ul>
+        
+              <div class="col-md-3 text-end">
+                <a href="iniciar.html" class="btn btn-outline-primary me-2">Iniciar Sesión</a>
+                <a href="registrarse.html" class="btn btn-primary">Registrarse</a>
+              </div>
+            </header>
+          </div>
         <fieldset id="titulo">
-            <h1 class="centrar">Perturbaciones en la energía eléctrica</h1>
+            <h1 class="centrar link-primary">Perturbaciones en la energía eléctrica</h1>
         </fieldset>   
     </header>
     
-    <main id="contenido">
+    <main id="contenido" class="bg-dark text-white">
         <fieldset>
         <article id="definicion">
             Una perturbación son los eventos que afectan o deterioran las características de la señal senoidal
@@ -272,24 +284,24 @@
                         Multidisciplinas de la Ingeniería, vol. 1, no. 1, pp. 29-54, octubre 2013.
                     </li>
                     <li>S. Blanco, <q><cite>Análisis sobre la calidad de la energía en redes eléctricas</cite></q>. [En línea]. Disponible: 
-                        <a href="https://docplayer.es/14563395-Medicion-de-la-calidad-de-la-energia.html">https://docplayer.es/14563395-Medicion-de-la-calidad-de-la-energia.html.</a>  
+                        <a href="https://docplayer.es/14563395-Medicion-de-la-calidad-de-la-energia.html" class="link-light">https://docplayer.es/14563395-Medicion-de-la-calidad-de-la-energia.html.</a>  
                         [Accedido: 24 de febrero 2022].</li>
                     <li>A. Eigeles y J. McNeill, <q><cite>Electric Power Quality</cite></q>, Annual Reviews, vol. 22, pp. 263-303,
                         1997.                
                     </li>
                     <li>BrainKart, <q><cite>Power frequency variations</cite></q>. [En línea]. Disponible: 
-                        <a href="https://www.brainkart.com/article/Power-frequency-variations_11694/">https://www.brainkart.com/article/Power-frequency-variations_11694/.</a>  
+                        <a href="https://www.brainkart.com/article/Power-frequency-variations_11694/" class="link-light">https://www.brainkart.com/article/Power-frequency-variations_11694/.</a>  
                         [Accedido: 06 de mayo 2022].</li>
                 </ol>
                 
             </fieldset>
     </main>
-<footer id="pie">
+<footer id="pie" class="bg-dark text-white">
     <fieldset class="centrar" id="bottom">
         
-        <a href="https://www.morelia.tecnm.mx" class="fuente">Tecnológico Nacional de México Campus Morelia</a>
+        <a href="https://www.morelia.tecnm.mx" class="nav-link px-2 link-primary">Tecnológico Nacional de México Campus Morelia</a>
         <br>
-        <a href="http://sagitario.itmorelia.edu.mx/pelectron/" class="fuente">Maestría en Ciencias en Ingeniería Electrónica</a>
+        <a href="http://sagitario.itmorelia.edu.mx/pelectron/" class="nav-link px-2 link-primary">Maestría en Ciencias en Ingeniería Electrónica</a>
         <!-- Agregar hora y fecha -->
     </fieldset>
 </footer> 
